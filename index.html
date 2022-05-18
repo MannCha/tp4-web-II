@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="bg-dark m-5">
+  <div class="container rounded-lg bg-light p-5">
+    <h3 class="py-1">Formulaire</h3>
+    <form class="main border rounded-lg needs-validation" action="" novalidate>
+
+      <!-- noms -->
+      <div class="row p-3">
+        <div class="col-lg">
+          <div class="form-group">
+            <label class="h6 form-label" for="userLastName">Nom</label>
+            <input type="text" class="form-control" id="userLastName" placeholder="Doe" required>
+          </div>
+        </div>
+        <div class="col-lg">
+          <div class="form-group">
+            <label class="h6 form-label" for="userFirstName">Prénom</label>
+            <input type="text" class="form-control" id="userFirstName" placeholder="John" required>
+          </div>
+        </div>
+      </div>
+      <hr class="m-0">
+
+      <!-- emails -->
+      <div data-email class="row p-3">
+        <div class="col-lg">
+          <div class="form-group">
+            <label class="h6 form-label" for="userEmail">Adresse courriel</label>
+            <input data-email-entry class="form-control" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}$"
+              id="userEmail" aria-describedby="emailHelp" placeholder="example@email.com" required>
+            <small id="emailHelp" class="form-text text-muted">Cette information reste confidentielle.</small>
+            <div class="valid-feedback">
+              Cette addresse est valide.
+            </div>
+          </div>
+        </div>
+        <div class="col-lg">
+          <div class="form-group">
+            <label class="h6 form-label" for="userEmailConfirm"> Confirmation de l'adresse courriel</label>
+            <input data-email-validate class="form-control"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="userEmailConfirm" placeholder="example@email.com"
+              required>
+            <div class="valid-feedback">
+              Les addresses sont identiques.
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="m-0">
+
+      <!-- adresse postale -->
+      <div>
+        <div class="row p-3 pt-3">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="h6 form-label" for="houseAddress">Addresse postale</label>
+              <input type="text" class="form-control" id="houseAddress" placeholder="123 Addresse" required>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label class="h6 form-label" for="apartmentNumber">Numéro d'appartement</label>
+              <input type="number" class="form-control" id="apartment-number" min="0" max="999999">
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label class="h6 form-label" for="phoneNumber">Numéro de téléphone</label>
+              <input type="number" class="form-control" id="phone-number" placeholder="4507694200">
+            </div>
+          </div>
+        </div>
+        <div class="row p-3">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="h6 form-label" for="city">Ville</label>
+              <input type="text" class="form-control" id="city" required>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="h6 form-label" for="postalCode">Code Postal</label>
+              <input type="text" class="form-control" id="postalCode" pattern="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$"
+                placeholder="A1A1A1" aria-describedby="postalCodeHelp" required>
+              <small id="postalCodeHelp" class="form-text text-muted">Doit respecter le format d'un code postal
+                canadien/québécois.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="m-0">
+
+
+      <!-- password -->
+      <div class="row p-3">
+        <div class="col-lg">
+          <div class="form-group">
+            <label class="h6 form-label" for="passwordEntry">Mot de passe</label>
+            <input data-password-entry type="text" class="form-control" id="passwordEntry"
+              pattern="^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" placeholder="********" aria-describedby="passwordHelp"
+              required>
+            <small id="passwordHelp" class="form-text text-muted">Doit contenir une majuscule, un chiffre et un minimum
+              de 8 caractères.</small>
+          </div>
+        </div>
+        <div class="col-lg">
+          <div class="form-group">
+            <label class="h6 form-label" for="passwordEntry" class="">Validation du mot de passe</label>
+            <input data-password-validate type="text" class="form-control" id="passwordEntry" placeholder="********"
+              required>
+          </div>
+        </div>
+      </div>
+      <hr class="m-0">
+
+      <!-- paiement -->
+
+      <div class="row p-3">
+        <div class="col-lg">
+          <div class="form-group">
+            <label class="h6 form-label" for="payment-mode-select">Mode de paiement</label>
+            <select class="custom-select" id="payment-mode-select">
+
+              <option value="credit">Carte de crédit</option>
+              <option value="paypal">Paypal</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- info carte de crédit -->
+      <div data-credit-card-info>
+        <div class="row p-3">
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label class="h6 form-label" for="credit-card-name">Nom du titulaire</label>
+              <input type="text" class="form-control" id="credit-card-name" placeholder="John Doe" required>
+            </div>
+          </div>
+          
+          <div class="col-lg-3">
+            <label class="h6 form-label">Type de la carte</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+              <label class="form-check-label" for="flexRadioDefault1">
+                Visa
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                Mastercard
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                American Express
+              </label>
+            </div>
+          </div>
+          <div class="col-lg-6 py-4">
+            <img src="images/Visa-Logo.png" alt="visa-logo">
+            <img src="images/Mastercard-Logo.png" alt="visa-logo">
+            <img src="images/American-Express-Logo.png" alt="visa-logo">
+          </div>
+        </div>
+        <div class="row p-3">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="h6 form-label" for="credit-card-number">Numéro de la carte</label>
+              <input type="text" class="form-control" id="credit-card-number" placeholder="1234 5678 9876 5432" pattern="^[0-9]{16}$" required>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="h6 form-label" for="credit-card-number">Numéro de sécurité (CVV)</label>
+              <input type="text" class="form-control" id="credit-card-cvv" placeholder="000" pattern="^[0-9]{3}$" required>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- paypal -->
+      <div data-paypal-info id="hidden">
+        <div class="row p-3">
+          <div class="col-lg-3">
+            <img src="images/PayPal-Logo.png" alt="paypal">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- bouton -->
+      <div class="col-12 pb-4 pl">
+        <button data-submit class="btn btn-primary" type="submit">Soumettre</button>
+      </div>
+
+    </form>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
